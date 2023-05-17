@@ -32,4 +32,18 @@ public class databaseConnection {
        
         return conn;
     }
+    
+    //code to test connection
+    
+//    public static void main(String []args){
+//        try{
+//        databaseConnection con = new databaseConnection();
+//        System.out.println("Connection made");
+//        }
+//        catch(Exception e){
+//            System.out.println("Connection not made");
+//        }
+//        
+//        
+//    }
 }
