@@ -14,18 +14,14 @@ import java.sql.SQLException;
  */
 public class databaseConnection {   
     static Connection conn; 
-    static String driver = "com.microdoft.sqlserver.jdbc.SQLServerDriver";
+    static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     static String url = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=quiz_management_db;encrypt=true;trustServerCertificate=true";
     static String userName = "jawad";
     static String pass = "jawad";
-    public static Connection getConnection() throws SQLException{
+    public static Connection getConnection() throws SQLException, ClassNotFoundException{
         if(conn == null){
-             //registering driver
-        try{
+             //registering jdbc driver
         Class.forName(driver);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
         //establishing connection through driver
         conn = DriverManager.getConnection(url,userName,pass);
         }
